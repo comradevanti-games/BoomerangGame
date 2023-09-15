@@ -1,11 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw00tajv782a8"]
+[gd_scene format=3 uid="uid://co8ial0y7sroo"]
 
-[ext_resource type="PackedScene" uid="uid://dhm36teafpvny" path="res://scenes/player.tscn" id="1_27x22"]
-[ext_resource type="PackedScene" uid="uid://bxljlqedgd4t2" path="res://scenes/weapon.tscn" id="2_oippt"]
-
-[node name="Game" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_27x22")]
-
-[node name="Weapon" parent="." instance=ExtResource("2_oippt")]
-position = Vector2(159, -23)
+[node name="game" type="Node2D"]
