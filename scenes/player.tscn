@@ -1,5 +1,16 @@
-[gd_scene format=3 uid="uid://dhm36teafpvny"]
+[gd_scene load_steps=3 format=3 uid="uid://dhm36teafpvny"]
 
-[node name="player" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bxjk0c5wpqggt" path="res://icon.svg" id="1_jw1uq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aqa5l"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jw1uq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_aqa5l")
+
+[node name="Camera2D" type="Camera2D" parent="."]

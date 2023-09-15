@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxljlqedgd4t2"]
+
+[ext_resource type="Texture2D" uid="uid://yfudgttt3wa" path="res://sprites/Axe_Lv01_64x64.png" id="1_yvykm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvtd5"]
+
+[node name="Weapon" type="Node2D"]
+position = Vector2(421, 388)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yvykm")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(1.5, 2.2)
+shape = SubResource("RectangleShape2D_cvtd5")
