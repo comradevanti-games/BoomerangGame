@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcqhtglbsj0ro"]
+[gd_scene load_steps=5 format=3 uid="uid://c6yvuy47f2pft"]
 
 [ext_resource type="Texture2D" uid="uid://cytbg7kicp1do" path="res://sprites/Player_Idle_32x64.png" id="1_0kiy1"]
-[ext_resource type="Script" path="res://scenes/PlayerMovement.cs" id="1_udt27"]
+[ext_resource type="Script" path="res://scripts/PlayerMovement.cs" id="1_dpwil"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cpk5g"]
 
@@ -18,7 +18,9 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_udt27")
+script = ExtResource("1_dpwil")
+Speed = 250.0
+JumpVelocity = -300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 2)
@@ -28,3 +30,6 @@ shape = SubResource("CapsuleShape2D_cpk5g")
 sprite_frames = SubResource("SpriteFrames_txlou")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+editor_draw_drag_margin = true
