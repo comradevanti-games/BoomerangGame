@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6yvuy47f2pft"]
 
-[ext_resource type="Script" path="res://scripts/PlayerMovement.cs" id="1_dpwil"]
+[ext_resource type="Script" path="res://code/PlayerMovement.cs" id="1_dpwil"]
 [ext_resource type="Texture2D" uid="uid://yfs804gwyuqk" path="res://sprites/Player_Fall.png" id="2_wgcoo"]
 [ext_resource type="Texture2D" uid="uid://h02hc1otqkk2" path="res://sprites/Player_Idle.png" id="3_xurq7"]
 [ext_resource type="Texture2D" uid="uid://cyfntavmtqpak" path="res://sprites/Player_Jump.png" id="4_iobnb"]
