@@ -1,6 +1,8 @@
 using System;
 using Godot;
 
+namespace BoomerangGame;
+
 public partial class SinMove : Node
 {
     [Export] private float amplitude;

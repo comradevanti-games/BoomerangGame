@@ -1,5 +1,7 @@
 using Godot;
 
+namespace BoomerangGame;
+
 public partial class PlayerMovement : CharacterBody2D {
 
 	[Export] public float Speed = 300.0f;
