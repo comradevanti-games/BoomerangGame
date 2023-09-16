@@ -7,12 +7,57 @@ size = Vector2(32, 32)
 
 [node name="Level_001" type="Node2D"]
 position = Vector2(0, 489)
-scale = Vector2(100, 10)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Floor_001" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor_001"]
 texture = ExtResource("1_jx7gl")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor_001"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_001/StaticBody2D"]
+shape = SubResource("RectangleShape2D_64kjh")
+
+[node name="Floor_002" type="Node2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor_002"]
+texture = ExtResource("1_jx7gl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor_002"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_002/StaticBody2D"]
+shape = SubResource("RectangleShape2D_64kjh")
+
+[node name="Floor_003" type="Node2D" parent="."]
+position = Vector2(64, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor_003"]
+texture = ExtResource("1_jx7gl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor_003"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_003/StaticBody2D"]
+shape = SubResource("RectangleShape2D_64kjh")
+
+[node name="Floor_004" type="Node2D" parent="."]
+position = Vector2(-32, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor_004"]
+texture = ExtResource("1_jx7gl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor_004"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_004/StaticBody2D"]
+shape = SubResource("RectangleShape2D_64kjh")
+
+[node name="Floor_005" type="Node2D" parent="."]
+position = Vector2(96, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor_005"]
+texture = ExtResource("1_jx7gl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor_005"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor_005/StaticBody2D"]
 shape = SubResource("RectangleShape2D_64kjh")
