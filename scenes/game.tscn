@@ -6,8 +6,7 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("PlayerAnimationSprite") instance=ExtResource("1_d6xaf")]
-PlayerAnimationSprite = NodePath("")
+[node name="Player" parent="." instance=ExtResource("1_d6xaf")]
 
 [node name="Enemy" parent="." instance=ExtResource("1_qjjg6")]
 position = Vector2(200, 200)
