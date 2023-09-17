@@ -63,13 +63,17 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerAnimationSprite")]
+slide_on_ceiling = false
+safe_margin = 0.8
 script = ExtResource("1_dpwil")
-Speed = 250.0
+Speed = 275.0
 JumpVelocity = -300.0
+DoubleJumpVelocity = -250.0
 PlayerAnimationSprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 2)
+position = Vector2(0, 5)
+scale = Vector2(1, 1.8)
 shape = SubResource("CapsuleShape2D_cpk5g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

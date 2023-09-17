@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yfudgttt3wa"
-path="res://.godot/imported/Axe_Lv01_64x64.png-4c45e1f5b0df6ad0cd71dfb7175eeb3d.ctex"
+uid="uid://dskb07vbb30ip"
+path="res://.godot/imported/TileSet_01_4x32x32.png-903db0bc609f437f42bb1dad3304e457.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Axe_Lv01_64x64.png"
-dest_files=["res://.godot/imported/Axe_Lv01_64x64.png-4c45e1f5b0df6ad0cd71dfb7175eeb3d.ctex"]
+source_file="res://sprites/TileSet_01_4x32x32.png"
+dest_files=["res://.godot/imported/TileSet_01_4x32x32.png-903db0bc609f437f42bb1dad3304e457.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
