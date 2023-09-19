@@ -17,6 +17,8 @@ public partial class DirectionalSpawner : Node2D
 
     public void Spawn()
     {
+        // TODO: Use a pool
+        
         var sceneRoot = sceneToSpawn.Instantiate();
         root.AddChild(sceneRoot);
         
