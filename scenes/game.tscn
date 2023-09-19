@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://co8ial0y7sroo"]
+[gd_scene load_steps=5 format=3 uid="uid://co8ial0y7sroo"]
 
 [ext_resource type="PackedScene" uid="uid://c6yvuy47f2pft" path="res://scenes/player.tscn" id="1_d6xaf"]
-[ext_resource type="PackedScene" uid="uid://b88bq5u1y2sr0" path="res://scenes/enemy.tscn" id="1_qjjg6"]
 [ext_resource type="PackedScene" uid="uid://b4w6l5kuohhka" path="res://scenes/level_001.tscn" id="3_dl1eo"]
+[ext_resource type="PackedScene" uid="uid://bxjjpo470djue" path="res://scenes/enemies/shooter.tscn" id="3_mxhm8"]
+[ext_resource type="PackedScene" uid="uid://hjwtinaokmn3" path="res://scenes/sin_mover.tscn" id="3_tx7wd"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_d6xaf")]
 position = Vector2(0, -32)
 
-[node name="Enemy" parent="." instance=ExtResource("1_qjjg6")]
-position = Vector2(175, 35)
-
 [node name="Level_001" parent="." instance=ExtResource("3_dl1eo")]
+
+[node name="SinMover" parent="." instance=ExtResource("3_tx7wd")]
+position = Vector2(270, -114)
+maxAmplitude = 50.0
+frequency = 2.0
+angle = 90.0
+
+[node name="Shooter" parent="SinMover" instance=ExtResource("3_mxhm8")]
