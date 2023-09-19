@@ -4,9 +4,9 @@ namespace BoomerangGame;
 
 public partial class DirectionalSpawner : Node2D
 {
-    [Export] private PackedScene sceneToSpawn;
+    [Export] private PackedScene sceneToSpawn = null!;
 
-    private Node root;
+    private Node root = null!;
 
 
     public override void _Ready()
