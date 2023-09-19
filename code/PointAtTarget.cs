@@ -5,8 +5,6 @@ namespace BoomerangGame;
 
 public partial class PointAtTarget : Node2D
 {
-    private static readonly float quarterRotation = Mathf.DegToRad(90);
-    
     private Node2D? target;
 
 
@@ -24,7 +22,7 @@ public partial class PointAtTarget : Node2D
     private void PointAt(Node2D node)
     {
         var direction = node.GlobalPosition - GlobalPosition;
-        Rotation = direction.Angle() + quarterRotation;
+        Rotation = direction.Angle();
     }
 
     public override void _PhysicsProcess(double delta)
