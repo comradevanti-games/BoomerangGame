@@ -1,11 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxjjpo470djue"]
+[gd_scene load_steps=6 format=3 uid="uid://bxjjpo470djue"]
 
 [ext_resource type="PackedScene" uid="uid://b88bq5u1y2sr0" path="res://scenes/enemies/enemy.tscn" id="1_xo3np"]
 [ext_resource type="Texture2D" uid="uid://idufdtlv1omr" path="res://sprites/shooter.png" id="2_4rjw4"]
 [ext_resource type="Script" path="res://code/enemies/ShooterEnemy.cs" id="2_hynuf"]
+[ext_resource type="Script" path="res://code/DirectionalSpawner.cs" id="4_5ar1s"]
+[ext_resource type="PackedScene" uid="uid://1p52g0ry2u1q" path="res://scenes/bullet.tscn" id="5_gqvg4"]
 
 [node name="Shooter" instance=ExtResource("1_xo3np")]
+position = Vector2(4, 14)
 script = ExtResource("2_hynuf")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_4rjw4")
+
+[node name="ShootTimer" type="Timer" parent="." index="1"]
+process_callback = 0
+autostart = true
+
+[node name="BulletSpawner" type="Node2D" parent="." index="2"]
+script = ExtResource("4_5ar1s")
+sceneToSpawn = ExtResource("5_gqvg4")
+
+[connection signal="timeout" from="ShootTimer" to="BulletSpawner" method="Spawn"]
