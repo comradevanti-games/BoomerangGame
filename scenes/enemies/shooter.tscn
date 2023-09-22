@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxjjpo470djue"]
+[gd_scene load_steps=9 format=3 uid="uid://bxjjpo470djue"]
 
 [ext_resource type="PackedScene" uid="uid://b88bq5u1y2sr0" path="res://scenes/enemies/enemy.tscn" id="1_xo3np"]
 [ext_resource type="Texture2D" uid="uid://idufdtlv1omr" path="res://sprites/shooter.png" id="2_4rjw4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://code/DirectionalSpawner.cs" id="4_5ar1s"]
 [ext_resource type="PackedScene" uid="uid://1p52g0ry2u1q" path="res://scenes/bullet.tscn" id="5_gqvg4"]
 [ext_resource type="Script" path="res://code/PointAtTarget.cs" id="6_ulk64"]
+[ext_resource type="Script" path="res://code/PausableTimer.cs" id="7_ukees"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e4p3b"]
 resource_local_to_scene = true
@@ -31,6 +32,7 @@ sceneToSpawn = ExtResource("5_gqvg4")
 [node name="ShootTimer" type="Timer" parent="Cannon" index="1"]
 process_callback = 0
 autostart = true
+script = ExtResource("7_ukees")
 
 [node name="AgroArea" type="Area2D" parent="." index="2"]
 collision_layer = 0
@@ -39,8 +41,9 @@ collision_mask = 2
 [node name="Shape" type="CollisionShape2D" parent="AgroArea" index="0"]
 shape = SubResource("CircleShape2D_e4p3b")
 
-[connection signal="timeout" from="Cannon/ShootTimer" to="Cannon/BulletSpawner" method="Spawn"]
+[connection signal="ready" from="." to="Cannon/ShootTimer" method="Pause"]
+[connection signal="timeout" from="Cannon/ShootTimer" to="Cannon/Spawner" method="Spawn"]
 [connection signal="body_entered" from="AgroArea" to="Cannon" method="SetTarget"]
-[connection signal="body_entered" from="AgroArea" to="Cannon/ShootTimer" method="set_physics_process" binds= [true]]
-[connection signal="body_exited" from="AgroArea" to="Cannon" method="ClearTarget"]
-[connection signal="body_exited" from="AgroArea" to="Cannon/ShootTimer" method="set_physics_process" binds= [false]]
+[connection signal="body_entered" from="AgroArea" to="Cannon/ShootTimer" method="Unpause" unbinds=1]
+[connection signal="body_exited" from="AgroArea" to="Cannon" method="ClearTarget" unbinds=1]
+[connection signal="body_exited" from="AgroArea" to="Cannon/ShootTimer" method="Pause" unbinds=1]
