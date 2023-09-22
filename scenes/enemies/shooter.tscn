@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b88bq5u1y2sr0" path="res://scenes/enemies/enemy.tscn" id="1_xo3np"]
 [ext_resource type="Texture2D" uid="uid://idufdtlv1omr" path="res://sprites/shooter.png" id="2_4rjw4"]
 [ext_resource type="Script" path="res://code/enemies/ShooterEnemy.cs" id="2_hynuf"]
-[ext_resource type="Script" path="res://code/DirectionalSpawner.cs" id="4_5ar1s"]
+[ext_resource type="Script" path="res://code/Launcher.cs" id="5_5nqvd"]
 [ext_resource type="PackedScene" uid="uid://1p52g0ry2u1q" path="res://scenes/bullet.tscn" id="5_gqvg4"]
 [ext_resource type="Script" path="res://code/PointAtTarget.cs" id="6_ulk64"]
 [ext_resource type="Script" path="res://code/PausableTimer.cs" id="7_ukees"]
@@ -23,11 +23,11 @@ texture = ExtResource("2_4rjw4")
 position = Vector2(-3, 1)
 script = ExtResource("6_ulk64")
 
-[node name="BulletSpawner" type="Node2D" parent="Cannon" index="0"]
-process_mode = 4
+[node name="Spawner" type="Node2D" parent="Cannon" index="0"]
 position = Vector2(3, -1)
-script = ExtResource("4_5ar1s")
-sceneToSpawn = ExtResource("5_gqvg4")
+script = ExtResource("5_5nqvd")
+bullet = ExtResource("5_gqvg4")
+launchSpeed = 500.0
 
 [node name="ShootTimer" type="Timer" parent="Cannon" index="1"]
 process_callback = 0
@@ -35,8 +35,10 @@ autostart = true
 script = ExtResource("7_ukees")
 
 [node name="AgroArea" type="Area2D" parent="." index="2"]
+position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="Shape" type="CollisionShape2D" parent="AgroArea" index="0"]
 shape = SubResource("CircleShape2D_e4p3b")
