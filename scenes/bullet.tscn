@@ -7,7 +7,11 @@ radius = 0.5
 height = 3.0
 
 [node name="Bullet" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
 mass = 0.1
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_bcaea")
@@ -21,4 +25,5 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
+[connection signal="body_entered" from="." to="." method="queue_free" unbinds=1]
 [connection signal="timeout" from="DespawnTimer" to="." method="queue_free"]
